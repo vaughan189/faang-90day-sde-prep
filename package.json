@@ -1,0 +1,27 @@
+{
+  "name": "faang-90day-sde-prep",
+  "version": "1.0.0",
+  "description": "90-Day FAANG & Tier-1 Senior Engineer Preparation Monorepo",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "track": "node scripts/update-progress.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "faang",
+    "leetcode",
+    "frontend-system-design",
+    "polyfills",
+    "algorithms",
+    "react",
+    "typescript"
+  ],
+  "author": "Vaughan Dominic Po <vaughan188@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.4.0"
+  }
+}
