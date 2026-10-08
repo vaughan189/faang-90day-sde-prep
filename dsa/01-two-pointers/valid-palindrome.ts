@@ -31,6 +31,15 @@ function isAlphanumeric(char: string): boolean {
   return (
     (code >= 48 && code <= 57) || // 0-9
     (code >= 65 && code <= 90) || // A-Z
-    (code >= 97 && code <= 122)   // a-z
+    (code >= 97 && code <= 122) // a-z
   );
 }
+
+// var isPalindrome = function (s) {
+//   const string = s;
+//   const lowerCaseResult = s.toLowerCase(s);
+//   const replaceAlphaResult = lowerCaseResult.replace(/[^A-Za-z0-9]/g, "");
+//   const reverseString = replaceAlphaResult.split("").reverse().join("");
+//   if (reverseString === replaceAlphaResult) return true;
+//   else return false;
+// };

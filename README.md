@@ -1,6 +1,6 @@
 # 🚀 90-Day FAANG & Tier-1 Senior Engineer Preparation Monorepo
 
-![Progress](https://img.shields.io/badge/Progress-0%2F69%20Tasks%20(0.0%25)-brightgreen.svg)-brightgreen.svg)
+![Progress](https://img.shields.io/badge/Progress-2%2F69%20Tasks%20(2.9%25)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)
 ![Track](https://img.shields.io/badge/Track-Senior%20Frontend%20%2F%20FullStack%20(IC5)-blue.svg)
 ![Target](https://img.shields.io/badge/Target-FAANG%20%7C%20Tier--1%20Remote-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
@@ -12,13 +12,16 @@ A rigorous 90-day execution framework designed to prepare for **Senior Frontend 
 ## 📊 Live Progress Dashboard
 
 ### Progress Bar
-`[░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]` **0.0% Completed**
+
+`[█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]` **2.9% Completed**
 
 > **How to update progress**:
 > When you complete any checklist item below (change `[ ]` to `[x]`), simply run:
+>
 > ```bash
 > npm run track
 > ```
+>
 > This automatically computes your completion percentage and updates the badge and progress bar.
 
 ---
@@ -50,8 +53,9 @@ faang-90day-sde-prep/
 ### Month 1: Foundation, Core JS & Muscle Memory (Days 1–30)
 
 #### Week 1: Two Pointers, Sliding Window & JavaScript Polyfills
-- [ ] Day 1: Solve Valid Palindrome (LC 125) & Two Sum II (LC 167)
-- [ ] Day 1: Implement custom `Function.prototype.myCall`, `myApply`, and `myBind`
+
+- [x] Day 1: Solve Valid Palindrome (LC 125) & Two Sum II (LC 167)
+- [x] Day 1: Implement custom `Function.prototype.myCall`, `myApply`, and `myBind`
 - [ ] Day 2: Solve 3Sum (LC 15) & Container With Most Water (LC 11)
 - [ ] Day 2: Implement `debounce` with leading, trailing, and cancel support
 - [ ] Day 3: Solve Trapping Rain Water (LC 42)
@@ -65,6 +69,7 @@ faang-90day-sde-prep/
 - [ ] Day 7: Timed mock re-solve of 3Sum & Trapping Rain Water
 
 #### Week 2: Linked Lists, Monotonic Stack & Event Loop
+
 - [ ] Day 8: Solve Reverse Linked List (LC 206) & Merge Two Sorted Lists (LC 21)
 - [ ] Day 8: Implement `deepClone` supporting circular references & RegExp
 - [ ] Day 9: Solve Reorder List (LC 143) & Remove Nth Node From End (LC 19)
@@ -80,6 +85,7 @@ faang-90day-sde-prep/
 - [ ] Day 14: Weekly review & timed machine coding re-test
 
 #### Week 3: Binary Search, Trees (BFS/DFS) & DOM Engine
+
 - [ ] Day 15: Solve Binary Search (LC 704) & Search in Rotated Sorted Array (LC 33)
 - [ ] Day 15: DOM APIs deep-dive (`getBoundingClientRect`, `DocumentFragment`)
 - [ ] Day 16: Solve Find Minimum in Rotated Sorted Array (LC 153) & Koko Eating Bananas (LC 875)
@@ -95,6 +101,7 @@ faang-90day-sde-prep/
 - [ ] Day 21: Weekly Tree pattern synthesis & Behavioral Story 1 drafting
 
 #### Week 4: Graphs (BFS/DFS, Topo Sort) & React Performance
+
 - [ ] Day 22: Solve Number of Islands (LC 200) & Max Area of Island (LC 695)
 - [ ] Day 22: Machine Coding: Auto-suggest with `AbortController` cancellation
 - [ ] Day 23: Solve Clone Graph (LC 133) & Rotting Oranges (LC 994)
@@ -114,6 +121,7 @@ faang-90day-sde-prep/
 ---
 
 ### Month 2: Architecture & System Design (Days 31–60)
+
 - [ ] Week 5: Heaps/Priority Queues & Frontend System Design 5-Step Framework
 - [ ] Week 5: System Design: Scalable Autocomplete / Typeahead Component
 - [ ] Week 6: Dynamic Programming Patterns (1D & 2D) & Real-Time Collaborative Architecture
@@ -126,6 +134,7 @@ faang-90day-sde-prep/
 ---
 
 ### Month 3: Mock Interviews, Speed & Active Interviewing (Days 61–90)
+
 - [ ] Week 9: 4 Peer Mocks on Pramp / Meetapro (DSA & Frontend System Design)
 - [ ] Week 10: Company Tagged Questions (Atlassian, Uber, Airbnb, GitLab)
 - [ ] Week 10: Behavioral Mastery: Rehearse 6 STAR stories + sabbatical framing
