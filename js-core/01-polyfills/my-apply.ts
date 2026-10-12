@@ -6,7 +6,7 @@ functionPrototype.myApply = function (
 ) {
   if (typeof this !== "function") {
     throw new TypeError(
-      "Function.prototype.myApply - what is being called is not callable",
+      "Function.prototype.myApply - what is being applied is not callable",
     );
   }
 
