@@ -1,6 +1,23 @@
 /**
  * Polyfill: debounce
- * Handles: Leading edge execution, trailing edge execution, and cancel() method.
+ * Handles: basic function and delay.
  */
 
-export {};
+function debounce<T extends (...args: any[]) => unknown>(
+  func: T,
+  wait: number,
+) {
+  let timer: ReturnType<typeof setTimeout> | null = null;
+
+  return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
+    const context = this;
+
+    if (timer !== null) {
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
+}
