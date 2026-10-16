@@ -58,7 +58,7 @@ faang-90day-sde-prep/
 - [x] Day 1: Implement custom `Function.prototype.myCall`, `myApply`, and `myBind`
 - [x] Day 2: Solve 3Sum (LC 15) & Container With Most Water (LC 11)
 - [x] Day 2: Implement `debounce` with leading, trailing, and cancel support
-- [ ] Day 3: Solve Trapping Rain Water (LC 42)
+- [x] Day 3: Solve Trapping Rain Water (LC 42)
 - [ ] Day 3: Implement `throttle` with leading & trailing options
 - [ ] Day 4: Solve Longest Substring Without Repeating Characters (LC 3)
 - [ ] Day 4: Implement custom `Promise` polyfill from scratch
