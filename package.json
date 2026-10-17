@@ -7,7 +7,9 @@
   "scripts": {
     "track": "node scripts/update-progress.js",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "drill": "npm run dev --prefix interview-machine-coding",
+    "drill:build": "npm run build --prefix interview-machine-coding"
   },
   "keywords": [
     "faang",
