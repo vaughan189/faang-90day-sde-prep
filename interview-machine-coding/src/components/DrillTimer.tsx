@@ -6,12 +6,12 @@ interface DrillTimerProps {
   targetMinutes?: number;
 }
 
-export const DrillTimer: React.FC<DrillTimerProps> = ({ drillName, targetMinutes = 60 }) => {
+export const DrillTimer: React.FC<DrillTimerProps> = ({ drillName, targetMinutes = 45 }) => {
   const [secondsLeft, setSecondsLeft] = useState(targetMinutes * 60);
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
-    // Reset timer when drill changes
+    // Reset timer when drill changes or targetMinutes changes
     setSecondsLeft(targetMinutes * 60);
     setIsRunning(false);
   }, [drillName, targetMinutes]);
@@ -33,14 +33,16 @@ export const DrillTimer: React.FC<DrillTimerProps> = ({ drillName, targetMinutes
   const minutes = Math.floor(secondsLeft / 60);
   const seconds = secondsLeft % 60;
 
-  const isLowTime = secondsLeft < 600; // < 10 mins
+  const isLowTime = secondsLeft < 300; // < 5 mins
   const isExpired = secondsLeft === 0;
 
   return (
     <div className="flex items-center gap-4 bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl shadow-lg">
       <div className="flex items-center gap-2">
         <Clock className={`w-5 h-5 ${isExpired ? 'text-red-500 animate-pulse' : isLowTime ? 'text-amber-400' : 'text-emerald-400'}`} />
-        <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold">60m Interview Timer</span>
+        <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold">
+          {targetMinutes}m Sprint Timer
+        </span>
       </div>
 
       <div className={`font-mono text-xl font-bold px-3 py-1 rounded-lg ${
@@ -62,7 +64,7 @@ export const DrillTimer: React.FC<DrillTimerProps> = ({ drillName, targetMinutes
               ? 'bg-amber-600/30 text-amber-300 hover:bg-amber-600/50' 
               : 'bg-emerald-600/30 text-emerald-300 hover:bg-emerald-600/50'
           }`}
-          title={isRunning ? 'Pause Timer' : 'Start 60m Sprint'}
+          title={isRunning ? 'Pause Timer' : `Start ${targetMinutes}m Sprint`}
         >
           {isRunning ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
         </button>
