@@ -1,6 +1,6 @@
 # 🚀 90-Day FAANG & Tier-1 Senior Engineer Preparation Monorepo
 
-![Progress](https://img.shields.io/badge/Progress-6%2F69%20Tasks%20(8.7%25)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)
+![Progress](https://img.shields.io/badge/Progress-6%2F69%20Tasks%20(8.7%25)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)
 ![Track](https://img.shields.io/badge/Track-Senior%20Frontend%20%2F%20FullStack%20(IC5)-blue.svg)
 ![Target](https://img.shields.io/badge/Target-FAANG%20%7C%20Tier--1%20Remote-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
