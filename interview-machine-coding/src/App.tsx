@@ -21,7 +21,7 @@ import {
 import { DrillTimer } from "./components/DrillTimer";
 
 // Import all 17 drills precisely matching the 90-Day Execution Tracker
-import DebouncedSearchInputDrillWrapper from "./drills/01-debounced-search-input/DebouncedSearchInputDrill";
+import { DebouncedSearchInputDrill } from "./drills/01-debounced-search-input/DebouncedSearchInputDrill";
 import { AutocompleteKeyboardNavigationDrill } from "./drills/02-autocomplete-keyboard-navigation/AutocompleteKeyboardNavigationDrill";
 import { AutocompleteCachedTTLDrill } from "./drills/03-autocomplete-cached-ttl/AutocompleteCachedTtlDrill";
 import { PubSubEventComponentDrill } from "./drills/04-pubsub-event-component/PubsubEventComponentDrill";
@@ -62,7 +62,7 @@ export function App() {
       name: "01. Debounced Search Input",
       category: "core",
       targetMinutes: 30,
-      component: <DebouncedSearchInputDrillWrapper />,
+      component: <DebouncedSearchInputDrill />,
       icon: <Search className="w-4 h-4" />,
       companyTags: ["Google", "Atlassian", "Flipkart"],
     },

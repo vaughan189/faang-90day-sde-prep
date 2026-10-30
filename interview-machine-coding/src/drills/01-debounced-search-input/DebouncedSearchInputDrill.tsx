@@ -8,23 +8,19 @@ import React, { useEffect, useRef, useState } from "react";
  * Requirements:
  * 1. Controlled text input with debounce (300ms)
  * 2. Cancel token / abort function to cancel pending debounce timer
+ * TODO: Implement clear button and cancels pending call
  * 3. Clear button (X) that clears text and cancels any pending call
+ * TODO: Implement loading state and display live status
  * 4. Display live status (e.g. "Typing / Waiting 300ms" vs "Executed query")
  */
-interface DebouncedSearchInputDrillProps {
-  onSearch: (query: string, signal: AbortSignal) => Promise<unknown>;
-  delay?: number;
-  placeholder?: string;
-}
 
-const DebouncedSearchInputDrill: React.FC<DebouncedSearchInputDrillProps> = ({
-  onSearch,
-  delay = 300,
-  placeholder = "search",
-}) => {
+export const DebouncedSearchInputDrill: React.FC = () => {
   const [query, setQuery] = useState("");
-  // const [loading, setLoading] = useState(false);
-  let abortControllerRef = useRef<AbortController | null>(null);
+  const [debouncedValue, setDebouncedValue] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState<any[]>([]);
+
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     if (!query.trim()) {
@@ -38,26 +34,38 @@ const DebouncedSearchInputDrill: React.FC<DebouncedSearchInputDrillProps> = ({
 
       const controller = new AbortController();
       abortControllerRef.current = controller;
-      // setLoading(true);
+
+      setLoading(true);
+      setDebouncedValue(query);
 
       try {
-        await onSearch(query, controller.signal);
+        const response = await fetch(
+          `http://localhost:4000/api/search?q=${query}&delay=1000`,
+          {
+            signal: controller.signal,
+          },
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setResults(data.results);
       } catch (error: Error | any) {
         if (error.name != "AbortError") {
           console.error("Search error:", error);
         }
       } finally {
         if (abortControllerRef.current === controller) {
-          // setLoading(false);
+          setLoading(false);
         }
       }
-    }, delay);
+    }, 1000);
 
     return () => {
       clearTimeout(timer);
       abortControllerRef.current?.abort();
     };
-  }, [query, delay, onSearch]);
+  }, [query]);
 
   return (
     <div className="space-y-6">
@@ -75,51 +83,49 @@ const DebouncedSearchInputDrill: React.FC<DebouncedSearchInputDrillProps> = ({
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={placeholder}
+            placeholder={"Type your search query..."}
             className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 outline-none focus:border-indigo-500"
           />
-
+          <p className="min-h-5" role="status" aria-live="polite">
+            {loading ? (
+              <span className="inline-flex items-center gap-2 text-indigo-300">
+                <span
+                  aria-hidden="true"
+                  className="h-3 w-3 animate-spin rounded-full border-2 border-indigo-300 border-t-transparent"
+                />
+                Searching...
+              </span>
+            ) : null}
+          </p>
           <div className="text-xs text-slate-400 space-y-1">
             <p>
               Immediate input:{" "}
               <span className="text-indigo-300 font-mono">"{query}"</span>
             </p>
-            {/* <p>
+            <p>
               Debounced value:{" "}
               <span className="text-emerald-400 font-mono">
-                "{debouncedValue}"
+                {debouncedValue}
               </span>
-            </p> */}
+            </p>
           </div>
+          {results.length > 0 && (
+            <ul className="space-y-2" aria-label="Search results">
+              {results.map((result, index) => (
+                <li
+                  key={result.ticker ?? `${result.title}-${index}`}
+                  className="rounded-lg border border-slate-800 p-3 text-sm"
+                >
+                  <p className="font-medium text-white">{result.title}</p>
+                  <p className="text-slate-400">
+                    {result.ticker} · {result.category}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>
   );
 };
-
-const DebouncedSearchInputDrillWrapper: React.FC = () => {
-  const fetchSearchResults = async (query: string, signal: AbortSignal) => {
-    if (!query.trim()) {
-      return;
-    }
-
-    const response = await fetch(
-      `https://typicode.com/${encodeURIComponent(query)}`,
-      { signal },
-    );
-
-    if (!response.ok) {
-      throw new Error("Network response failure");
-    }
-
-    const data = await response.json();
-    return data.slice(0, 5);
-  };
-  return (
-    <div className="p-6">
-      <DebouncedSearchInputDrill onSearch={fetchSearchResults} />
-    </div>
-  );
-};
-
-export default DebouncedSearchInputDrillWrapper;
