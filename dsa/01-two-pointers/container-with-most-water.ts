@@ -23,3 +23,5 @@ var maxArea = function (height: number[]) {
   }
   return maxWater;
 };
+
+export default maxArea;

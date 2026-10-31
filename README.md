@@ -1,6 +1,6 @@
 # 🚀 90-Day FAANG & Tier-1 Senior Engineer Preparation Monorepo
 
-![Progress](https://img.shields.io/badge/Progress-6%2F69%20Tasks%20(8.7%25)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)
+![Progress](https://img.shields.io/badge/Progress-7%2F69%20Tasks%20(10.1%25)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)-brightgreen.svg)
 ![Track](https://img.shields.io/badge/Track-Senior%20Frontend%20%2F%20FullStack%20(IC5)-blue.svg)
 ![Target](https://img.shields.io/badge/Target-FAANG%20%7C%20Tier--1%20Remote-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
@@ -13,7 +13,7 @@ A rigorous 90-day execution framework designed to prepare for **Senior Frontend 
 
 ### Progress Bar
 
-`[███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]` **8.7% Completed**
+`[████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]` **10.1% Completed**
 
 > **How to update progress**:
 > When you complete any checklist item below (change `[ ]` to `[x]`), simply run:
@@ -60,7 +60,7 @@ faang-90day-sde-prep/
 - [x] Day 2: Implement `debounce` with leading, trailing, and cancel support
 - [x] Day 3: Solve Trapping Rain Water (LC 42)
 - [x] Day 3: Implement `throttle` with leading & trailing options
-- [ ] Day 4: Solve Longest Substring Without Repeating Characters (LC 3)
+- [x] Day 4: Solve Longest Substring Without Repeating Characters (LC 3)
 - [ ] Day 4: Implement custom `Promise` polyfill from scratch
 - [ ] Day 5: Solve Minimum Window Substring (LC 76)
 - [ ] Day 5: Implement `Promise.all` & `Promise.allSettled` polyfills

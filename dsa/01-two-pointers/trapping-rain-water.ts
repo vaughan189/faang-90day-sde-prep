@@ -34,3 +34,5 @@ var trap = function (height: number[]): number {
   }
   return totalWater;
 };
+
+export default trap;

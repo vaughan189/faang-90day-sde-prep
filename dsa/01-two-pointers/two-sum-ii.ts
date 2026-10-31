@@ -18,3 +18,5 @@ var twoSum = function (numbers: number[], target: number): number[] {
   }
   throw new Error("No solution found");
 };
+
+export default twoSum;

@@ -49,3 +49,5 @@ var threeSum = function (nums: number[]): number[][] {
 
   return results;
 };
+
+export default threeSum;
