@@ -1,5 +1,3 @@
-import React, { useEffect, useRef, useState } from "react";
-
 /**
  * Day 3 Machine Coding Drill: Debounced Search Input with Cancel Token
  * Target Time: 30 Minutes
@@ -13,6 +11,7 @@ import React, { useEffect, useRef, useState } from "react";
  * TODO: Implement loading state and display live status
  * 4. Display live status (e.g. "Typing / Waiting 300ms" vs "Executed query")
  */
+import React, { useEffect, useRef, useState } from "react";
 
 export const DebouncedSearchInputDrill: React.FC = () => {
   const [query, setQuery] = useState("");

@@ -1,12 +1,3 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-  type ChangeEvent,
-  type FC,
-  type KeyboardEvent,
-} from "react";
-
 /**
  * Day 5 Machine Coding: Search Autocomplete with Keyboard Navigation
  * Target Time: 45 Minutes
@@ -18,6 +9,14 @@ import {
  * 3. Escape to close dropdown
  * 4. Highlight matching substring in filtered options
  */
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ChangeEvent,
+  type FC,
+  type KeyboardEvent,
+} from "react";
 
 interface AutocompleteProps {
   suggestions: string[];
